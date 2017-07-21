@@ -1,0 +1,23 @@
+version: '2'
+services:
+  redis-cluster:
+    build: ./docker
+    image: redis-cluster
+    container_name: redis-cluster
+    environment:
+      - TYPE=internal
+    ports:
+      - 7000:7000
+      - 7001:7001
+      - 7002:7002
+      - 7003:7003
+      - 7004:7004
+      - 7005:7005
+  # redis-cluster-test:
+  #   build: ./
+  #   image: redis-cluster-test
+  #   container_name: redis-cluster-test
+  #   volumes:
+  #     - /Users/meep007/cwz/develop/company/redis-cluster-test:/app
+  #   links:
+  #     - redis-cluster
